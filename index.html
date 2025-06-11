@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Learning Journey</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ff6ec7;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .logo i {
+      margin-right: 10px;
+    }
+
+    .logo:hover {
+      transform: scale(1.1) rotate(-3deg);
+    }
+
+    h1 {
+      text-align: center;
+      padding: 1rem;
+      font-size: 2.5rem;
+      color: #ff6ec7;
+      animation: fadeDown 1s ease-out;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #ff6ec7;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-entry {
+      padding: 20px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.6s ease-out;
+    }
+
+    .timeline-entry.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-entry.left {
+      left: 0;
+    }
+
+    .timeline-entry.right {
+      left: 50%;
+    }
+
+    .timeline-entry::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border: 3px solid #ff6ec7;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-entry.left::before {
+      right: -10px;
+    }
+
+    .timeline-entry.right::before {
+      left: -10px;
+    }
+
+    .timeline-content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(255, 110, 199, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-entry:hover .timeline-content {
+      transform: scale(1.03);
+    }
+
+    .timeline-content h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #ff6ec7;
+    }
+
+    .timeline-content p {
+      font-size: 1rem;
+      margin-top: 5px;
+      line-height: 1.6;
+    }
+
+    .dots-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.dot {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%);
+  border-radius: 50%;
+  animation: floatDot 8s infinite ease-in-out alternate;
+  filter: blur(20px);
+}
+
+@keyframes floatDot {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-60px) scale(1.2);
+    opacity: 0.5;
+  }
+}
+
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .timeline-entry {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+      .timeline-entry.left,
+      .timeline-entry.right {
+        left: 0;
+      }
+
+      .timeline-entry::before {
+        left: -10px;
+      }
+
+      .timeline::after {
+        left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo/Header -->
+  <header>
+    <div class="logo"><i class="fas fa-code-branch"></i>Aaditi’s Timeline</div>
+  </header>
+
+  <h1>My Learning Journey</h1>
+
+  <div class="timeline">
+    <div class="timeline-entry left">
+      <div class="timeline-content">
+        <h3>🔰 HTML Basics</h3>
+        <p>Started learning HTML to build simple webpages and understand the structure of web content.</p>
+      </div>
+    </div>
+    <div class="timeline-entry right">
+      <div class="timeline-content">
+        <h3>🎨 CSS Styling</h3>
+        <p>Learned CSS to add style and visual design to my pages — colors, fonts, layouts and more.</p>
+      </div>
+    </div>
+    <div class="timeline-entry left">
+      <div class="timeline-content">
+        <h3>⚙️ JavaScript Fundamentals</h3>
+        <p>Explored JavaScript to add interactivity like toggling menus and making simple games.</p>
+      </div>
+    </div>
+    <div class="timeline-entry right">
+      <div class="timeline-content">
+        <h3>🧩 Projects & Practice</h3>
+        <p>Started building projects like a color palette tool, landing pages, and creative experiments.</p>
+      </div>
+    </div>
+    <div class="timeline-entry left">
+      <div class="timeline-content">
+        <h3>🎨 Canva & Design</h3>
+        <p>Developed design skills on Canva and began freelancing as a poster and graphics designer.</p>
+      </div>
+    </div>
+    <div class="timeline-entry right">
+      <div class="timeline-content">
+        <h3>🌐 Web Dev Growth</h3>
+        <p>Now building creative websites with animations, themes, and custom designs — and loving it!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const entries = document.querySelectorAll('.timeline-entry');
+
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      entries.forEach(entry => {
+        const entryTop = entry.getBoundingClientRect().top;
+        if (entryTop < triggerBottom) {
+          entry.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+  <!-- Background Dots -->
+
+<div class="dots-bg">
+  <span class="dot" style="top: 10%; left: 20%; animation-delay: 0s;"></span>
+  <span class="dot" style="top: 30%; left: 70%; animation-delay: 2s;"></span>
+  <span class="dot" style="top: 60%; left: 40%; animation-delay: 4s;"></span>
+  <span class="dot" style="top: 80%; left: 80%; animation-delay: 1s;"></span>
+  <span class="dot" style="top: 50%; left: 10%; animation-delay: 3s;"></span>
+</div>
+
+</body>
+</html>
